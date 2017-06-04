@@ -1,0 +1,21 @@
+<script type="text/x-template" id="todo-item-comp">
+  <div class="item">
+    <div class="row">
+      <div class="col-md-9">
+        <input v-model="todo.success" type="checkbox" class="check" @click="checkeditem">
+        <span v-if="!editable">{{ todo.description }}</span>
+        <input v-if="editable" v-model="todo.description" type="text">
+      </div>
+
+      <button @click="delete_todo" type="button" class="close" >
+        <span aria-hidden="true">×</span>
+      </button>
+      <button @click="active_edit" v-if="!editable" type="button" class="close" >
+        <span class="glyphicon glyphicon-pencil" style="font-size: 20px;" aria-hidden="true"></span>
+      </button>
+      <button @click="active_edit" v-if="editable" type="button" class="close">
+        <span @click="update_todo" class="glyphicon glyphicon-floppy-disk" style="font-size: 20px;" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</script>

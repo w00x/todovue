@@ -1,0 +1,10 @@
+<%= form_tag session_create_account_path, class: 'form-signin' do %>
+  <h2 class="form-signin-heading">Crear cuenta</h2>
+  <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+  <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+  <input type="password" id="inputPasswordRe" name="password_confirmation" class="form-control" placeholder="Re Password" required>
+  <div>
+    <%= link_to "Ingresar", session_index_path %>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+<% end %>
